@@ -39,6 +39,7 @@
 (def source
   "https://github.com/yeun/open-color/raw/master/open-color.json")
 
-(->> (slurp open-color-el)
-     (update-colors (json/parse-string (slurp source)))
-     (spit open-color-el))
+(defn -main []
+  (->> (slurp open-color-el)
+       (update-colors (json/parse-string (slurp source)))
+       (spit open-color-el)))

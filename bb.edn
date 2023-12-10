@@ -1,0 +1,9 @@
+{:paths ["."]
+ :tasks
+ {update
+  {:doc "Update Open color from upstream"
+   :requires ([generate :as generate])
+   :task (do
+           (println "Updating ...")
+           (generate/-main)
+           (println "Updated!"))}}}

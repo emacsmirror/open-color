@@ -36,8 +36,10 @@
    To update colors from upstream there's a [[https://babashka.org/][Babashka]] script included, usage:
 
    #+BEGIN_SRC shell
-     bb ./generate.clj
+     bb update
    #+END_SRC
+
+   or just /M-x babashka-tasks RET update/ if there's [[https://github.com/licht1stein/babashka.el][babashka.el]] available.
 
 ** TODO To do
    - Add [[https://github.com/emacsmirror/rainbow-mode][Rainbow mode]] support.
