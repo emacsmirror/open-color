@@ -1,6 +1,6 @@
 * OpenColor
 
-open-color.el provides minimalistic RGB color definition from [[Open color][https://yeun.github.io/open-color/]]
+open-color.el provides minimalistic RGB color definition from [[https://yeun.github.io/open-color/][Open color]].
 
 ** Installation
 
@@ -20,7 +20,7 @@ See a more complex example here: [[https://github.com/a13/lor-theme/blob/master/
 
 ** Available Colors
    Check https://yeun.github.io/open-color/.
-   Prefix  "open-color-" is added to a color name, so "black" becomes "open-color-black", the rest colors have numbered suffixes, e.g. "open-color-red-9".
+   Prefix  "open-color-" is added to a color name, so "black" becomes "open-color-black",  other colors have numbered suffixes, e.g. "open-color-red-9".
 
 ** Updating colors
    To update colors from upstream there's a [[https://babashka.org/][Babashka]] script included, usage:
