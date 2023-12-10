@@ -28,3 +28,6 @@ See a more complex example here: [[https://github.com/a13/lor-theme/blob/master/
    #+BEGIN_SRC shell
      bb ./generate.clj
    #+END_SRC
+
+** TODO
+   - Add [[https://github.com/emacsmirror/rainbow-mode][Rainbow mode]] support.
