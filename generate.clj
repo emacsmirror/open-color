@@ -2,14 +2,11 @@
   (:require [clojure.string :as str]
             [cheshire.core :as json]))
 
-(def source
-  "https://github.com/yeun/open-color/raw/master/open-color.json")
-
 (def defvar-fmt
   "(defvar open-color-%s
   \"%s\")")
 
-(defn gen-color-defs [[color-name colors]]
+(defn- gen-color-defs [[color-name colors]]
   (if (string? colors)
     (format defvar-fmt color-name colors)
     (->> colors
@@ -21,14 +18,27 @@
 
 (def provide-marker "\\(provide 'open-color\\)")
 
-(let [parsed (json/parse-string (slurp source))
-      elisp-colors (->> parsed
-                        (mapv gen-color-defs)
-                        flatten)
-      orig-file (slurp "open-color.el")
-      pattern (format "(?is)(.*%s).*(%s.*)" code-marker provide-marker)
-      [_ header footer] (re-find (re-pattern pattern) orig-file)]
-  (when (seqable? elisp-colors)
-    (->> (concat [header] elisp-colors [footer])
-         (str/join "\n\n")
-         (spit "open-color.el"))))
+(def split-pattern
+  (re-pattern
+   (format "(?is)(.*%s).*(%s.*)" code-marker provide-marker)))
+
+
+(defn update-colors [source-colors current-colors]
+  (let [elisp-colors (->> source-colors
+                          (mapv gen-color-defs)
+                          flatten)
+        [_ header footer] (re-find split-pattern current-colors)]
+    (when (seqable? elisp-colors)
+      (->> (concat [header] elisp-colors [footer])
+           (str/join "\n\n")))))
+
+
+(def open-color-el
+  "open-color.el")
+
+(def source
+  "https://github.com/yeun/open-color/raw/master/open-color.json")
+
+(->> (slurp open-color-el)
+     (update-colors (json/parse-string (slurp source)))
+     (spit open-color-el))
