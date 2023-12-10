@@ -31,3 +31,5 @@ See a more complex example here: [[https://github.com/a13/lor-theme/blob/master/
 
 ** TODO To do
    - Add [[https://github.com/emacsmirror/rainbow-mode][Rainbow mode]] support.
+   - Extract version information
+   - run generate.clj from workflows
