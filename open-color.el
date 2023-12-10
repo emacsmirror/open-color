@@ -14,6 +14,15 @@
 
 ;; Open color is an open-source color scheme optimized for UI like font, background, border, etc.  Based on https://github.com/yeun/open-color.
 
+;; (require 'seq)
+;; (defun open-color-rainbow-alist ()
+;;   (seq-keep (lambda (color-symbol)
+;;               (when (and (symbolp color-symbol)
+;;                          (string-prefix-p "open-color-" (symbol-name color-symbol)))
+;;                 (cons (symbol-name color-symbol)
+;;                       (symbol-value color-symbol))))
+;;             (feature-symbols 'open-color)))
+
 ;;; Code:
 
 (defvar open-color-blue-0
