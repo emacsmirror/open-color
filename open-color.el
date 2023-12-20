@@ -7,21 +7,13 @@
 ;; Version: 0.0.1
 
 ;;; License:
-
-;; MIT License, see accompanying LICENSE file: https://github.com/a13/open-color.el/blob/master/LICENSE
+;; SPDX-License-Identifier: MIT
+;; see https://github.com/a13/open-color.el/blob/master/LICENSE
 
 ;;; Commentary:
 
-;; Open color is an open-source color scheme optimized for UI like font, background, border, etc.  Based on https://github.com/yeun/open-color.
-
-;; (require 'seq)
-;; (defun open-color-rainbow-alist ()
-;;   (seq-keep (lambda (color-symbol)
-;;               (when (and (symbolp color-symbol)
-;;                          (string-prefix-p "open-color-" (symbol-name color-symbol)))
-;;                 (cons (symbol-name color-symbol)
-;;                       (symbol-value color-symbol))))
-;;             (feature-symbols 'open-color)))
+;; Open color is an open-source color scheme optimized for UI like font,
+;; background, border, etc.  Based on https://github.com/yeun/open-color.
 
 ;;; Code:
 
