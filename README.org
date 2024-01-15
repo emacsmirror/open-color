@@ -1,15 +1,12 @@
 * OpenColor
-
+  [[https://melpa.org/#/open-color][https://melpa.org/packages/open-color-badge.svg]]
   open-color.el provides minimalistic RGB color definition from [[https://yeun.github.io/open-color/][Open color]].
 
 ** Installation
 
    #+BEGIN_SRC emacs-lisp
      (use-package open-color
-       ;; TODO: add to MELPA
-       ;; :ensure t
-       :quelpa
-       (open-color :repo "a13/open-color.el" :fetcher github :version original))
+       :ensure t)
    #+END_SRC
 
    But most likely one may want it use as a dependency, so once it on MELPA, add
@@ -45,4 +42,3 @@
    - Add [[https://github.com/emacsmirror/rainbow-mode][Rainbow mode]] support.
    - Extract version information
    - run generate.clj from workflows
-   - Add to MELPA
