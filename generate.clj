@@ -40,6 +40,6 @@
   "https://github.com/yeun/open-color/raw/master/open-color.json")
 
 (defn -main []
-  (->> (slurp open-color-el)
-       (update-colors (json/parse-string (slurp source)))
-       (spit open-color-el)))
+  (some->> (slurp open-color-el)
+           (update-colors (json/parse-string (slurp source)))
+           (spit open-color-el)))
