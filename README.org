@@ -9,7 +9,7 @@
        :ensure t)
    #+END_SRC
 
-   But most likely one may want it use as a dependency, so once it on MELPA, add
+   But most likely one may want it use as a dependency, so add
 
    #+BEGIN_SRC emacs-lisp
      ;; Package-Requires: ((open-color "0.0.1"))
